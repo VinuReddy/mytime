@@ -1,0 +1,20 @@
+﻿<div id="dvLocations" ng-controller="locationsCtrl">    
+    <h2 class="city">Locations</h2>    
+    <div id="dvContent" style="padding-top:10px;">
+        <span ng-show="isError" style="color:red;">{{ErrorMessage}}</span>
+        <div ng-repeat="loc in Locations">
+            <div class="row" id="locDv" style="border-bottom:1px solid #eee;background-color:#f7f7f7;border-radius:10px;">
+                <div class="col-xs-9">
+                    <h2 class="city">{{loc.city}}</h2>
+                    <span class="address">
+                        {{loc.street_address}}, {{loc.state}}, {{loc.zip_code}}, {{loc.country}}
+                    </span>
+                </div>
+                <div class="col-xs-3">
+                    <button class="btn btn-primary" style="margin:30px 0px 0px 0px;" ng-click="getDealsByLocation(loc.id);">Show Deals</button>
+                </div>
+                <div class="separator"></div>
+            </div>
+        </div>
+    </div>
+</div>

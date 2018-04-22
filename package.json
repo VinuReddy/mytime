@@ -1,0 +1,10 @@
+{
+	"name":"mytime",
+	"main":"app.js",
+	"scripts":{
+		"start":"node app"
+	},
+	"dependencies":{
+		"express":"*"
+	}
+}
