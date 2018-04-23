@@ -1,4 +1,4 @@
-Demo : https://thawing-cliffs-46693.herokuapp.com
+Demo : https://mytimevariations.herokuapp.com
 
 Steps to install mytime variations project
 
