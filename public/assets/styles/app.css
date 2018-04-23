@@ -1,0 +1,25 @@
+﻿.city {
+    font-family: Open Sans,sans-serif;
+    color: #3b4151;
+}
+.address {
+    font-size: 14px;
+    font-family: Open Sans,sans-serif;
+    color: #3b4151;
+}
+.separator {
+    border-bottom: 1px solid #eee;
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
