@@ -1,11 +1,11 @@
 ﻿<div id="dvDeals" ng-controller="dealsCtrl">
     <h2 class="city">Deals & Variations</h2>
-    <button class="btn btn-primary" style="margin:30px 0px 0px 0px;" ng-click="goHome();">Go home</button>
+    <button class="btn btn-primary mt-btn-home" ng-click="goHome();">Go home</button>
     <div spinner show="showSpinner"></div>
-    <div id="dvContent" style="padding-top:10px;">
-        <span ng-show="isError" style="color:red;">{{ErrorMessage}}</span>
-        <div ng-repeat="del in Deals">
-            <div class="row" id="locDv" style="border:1px solid #eee;background-color:#f7f7f7;border-radius:10px;">
+    <div id="dvContent" class="mt-deals-content">
+        <span class="danger" ng-show="isError">{{errorMessage}}</span>
+        <div ng-repeat="del in deals">
+            <div class="row mt-deal" id="locDv">
                 <div class="col-xs-12">
                     <h2 class="city">{{del.service.name}}</h2>
                 </div>

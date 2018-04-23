@@ -1,7 +1,7 @@
 myApp.controller('dealsCtrl', ['$scope', '$http', '$stateParams', 'mytimeService', '$state', function ($scope, $http, $stateParams, mytimeService, $state) {
-    $scope.Deals = [];
+    $scope.deals = [];
     $scope.isError = false;
-    $scope.ErrorMessage = "";
+    $scope.errorMessage = "";
     $scope.locId = $stateParams.locId;
     $scope.showSpinner = false;
     $scope.goHome = function () {
@@ -14,11 +14,11 @@ myApp.controller('dealsCtrl', ['$scope', '$http', '$stateParams', 'mytimeService
             .then(function (response) {
                 $scope.showSpinner = false;
                 if (response != null && response.deals != null && response.deals.length > 0) {
-                    $scope.Deals = response.deals;                    
+                    $scope.deals = response.deals;                    
                 }
                 else {
                     $scope.isError = true;
-                    $scope.ErrorMessage = "No deals found.";
+                    $scope.errorMessage = "No deals found.";
                 }
             },
             function (error) {

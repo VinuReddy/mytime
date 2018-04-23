@@ -1,7 +1,7 @@
 myApp.controller('locationsCtrl', ['$scope', '$http', '$state', 'mytimeService', function ($scope, $http, $state, mytimeService) {
-    $scope.Locations = [];
+    $scope.locations = [];
     $scope.isError = false;
-    $scope.ErrorMessage = "";
+    $scope.errorMessage = "";
     $scope.showSpinner = false;
     $scope.getLocations = function () {
         $scope.showSpinner = true;
@@ -9,11 +9,11 @@ myApp.controller('locationsCtrl', ['$scope', '$http', '$state', 'mytimeService',
             .then(function (response) {
                 $scope.showSpinner = false;
                 if (response != null && response.locations != null && response.locations.length > 0) {
-                    $scope.Locations = response.locations;
+                    $scope.locations = response.locations;
                 }
                 else {
                     $scope.isError = true;
-                    $scope.ErrorMessage = "No locations found.";
+                    $scope.errorMessage = "No locations found.";
                 }
             },
             function (error) {

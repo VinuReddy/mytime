@@ -44,3 +44,17 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.mt-btn-home {
+  margin:30px 0px 0px 0px;
+}
+
+.mt-deals-content {
+  padding-top:10px;
+}
+
+.mt-deal {
+  border:1px solid #eee;
+  background-color:#f7f7f7;
+  border-radius:10px;
+}
