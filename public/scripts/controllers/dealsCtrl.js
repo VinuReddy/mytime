@@ -3,14 +3,16 @@ myApp.controller('dealsCtrl', ['$scope', '$http', '$stateParams', 'mytimeService
     $scope.isError = false;
     $scope.ErrorMessage = "";
     $scope.locId = $stateParams.locId;
-
+    $scope.showSpinner = false;
     $scope.goHome = function () {
         $state.go('about');
     }
 
     $scope.getDealsByLocation = function (locId) {
+        $scope.showSpinner = true;
         mytimeService.getDealsByLocation('40426', locId)
             .then(function (response) {
+                $scope.showSpinner = false;
                 if (response != null && response.deals != null && response.deals.length > 0) {
                     $scope.Deals = response.deals;                    
                 }
@@ -20,6 +22,7 @@ myApp.controller('dealsCtrl', ['$scope', '$http', '$stateParams', 'mytimeService
                 }
             },
             function (error) {
+                $scope.showSpinner = false;
                 console.log("Error while getting the locations");
             });
     }
